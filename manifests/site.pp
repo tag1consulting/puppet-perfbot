@@ -1,2 +1,3 @@
 node default {
+  include base
 }
