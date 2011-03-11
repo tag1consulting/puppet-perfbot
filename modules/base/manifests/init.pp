@@ -1,15 +1,24 @@
 class base {
 
   yumrepo { "IUS":
-    baseurl => "http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/$basearch",
-    mirrorlist => "http://dmirr.iuscommunity.org/mirrorlist?repo=ius-el5&arch=$basearch",
+    name => "ius",
+    baseurl => "http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64",
+    mirrorlist => "http://dmirr.iuscommunity.org/mirrorlist?repo=ius-el5&arch=x86_64",
     enabled => 1,
   }
 
   yumrepo { "EPEL":
-    baseurl => "http://download.fedoraproject.org/pub/epel/5/$basearch/debug",
-    mirrorlist => "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-5&arch=$basearch",
+    name => "epel",
+    baseurl => "http://download.fedoraproject.org/pub/epel/5/x86_64/debug",
+    mirrorlist => "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-5&arch=x86_64",
     enabled => 1,
+  }
+
+  yumrepo { "Jenkins":
+    name => "jenkins",
+    baseurl => "http://pkg.jenkins-ci.org/redhat",
+    enabled => 1,
+    gpgcheck => 0,
   }
 
   package { "php53u":
