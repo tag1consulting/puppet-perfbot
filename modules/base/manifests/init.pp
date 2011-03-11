@@ -33,10 +33,6 @@ class base {
     ensure => latest,
   }
 
-  package { "php53u-dom":
-    ensure => latest,
-  }
-
   package { "php53u-pecl-apc":
     ensure => latest,
   }
